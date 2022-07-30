@@ -1,4 +1,4 @@
-module github.com/zooleen/golang_restapi
+module github.com/zooleen/cool_api
 
 go 1.18
 
