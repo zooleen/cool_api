@@ -1,10 +1,17 @@
-FROM golang:1.16-alpine
+FROM golang:1.18-alpine
 
 WORKDIR /app
 
-RUN go mod tidy
-RUN go build main.go -o cool_api
+COPY go.mod .
+COPY go.sum .
+RUN go mod download
 
-COPY . /
+COPY *.go ./
 
-RUN /cool_api
+RUN go build -o /cool_api
+
+EXPOSE 8080
+
+CMD [ "/cool_api" ]
+
+# ToDo basic multistage for future
