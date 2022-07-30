@@ -1,3 +1,6 @@
+# Default binary path
+/main
+
 # Logs
 logs
 *.log
